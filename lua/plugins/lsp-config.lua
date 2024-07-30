@@ -20,22 +20,21 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("lsp-zero")
+			local lsp_zero = require("lsp-zero")
+
+			lsp_zero.on_attach(function(client, bufnr)
+				lsp_zero.default_keymaps({ buffer = bufnr })
+        vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', {buffer = bufnr})
+			end)
+
+
 			require("lspconfig").intelephense.setup({})
 
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.gopls.setup({
-				capabilities = capabilities,
-			})
+      local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+      local lsp_config = require("lspconfig")
+      lsp_config.lua_ls.setup({capabilities = lsp_capabilities})
+      lsp_config.gopls.setup({capabilities = lsp_capabilities})
 		end,
 	},
 }
