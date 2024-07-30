@@ -49,6 +49,6 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<C-n>", ":NvimTreeFindFile<CR>", {})
+		vim.keymap.set("n", "<leader>e", ":NvimTreeFindFile<CR>", {})
 	end,
 }
