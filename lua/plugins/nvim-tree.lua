@@ -55,17 +55,19 @@ return {
         timeout = 2000,
         cygwin_support = false,
       },
-      open_file = {
-        quit_on_open = true,
-        eject = true,
-        resize_window = true,
-        window_picker = {
-          enable = true,
-          picker = "default",
-          chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-          exclude = {
-            filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-            buftype = { "nofile", "terminal", "help" },
+      actions = {
+        open_file = {
+          quit_on_open = true,
+          eject = true,
+          resize_window = true,
+          window_picker = {
+            enable = true,
+            picker = "default",
+            chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+            exclude = {
+              filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+              buftype = { "nofile", "terminal", "help" },
+            },
           },
         },
       },
