@@ -18,6 +18,7 @@ return {
 			end, { desc = "Selected Word" })
 			vim.keymap.set("n", "<leader>ph", builtin.help_tags, { desc = "Help Tags" })
 			vim.keymap.set("n", "<leader>pb", builtin.buffers, { desc = "File Buffers" })
+			vim.keymap.set("n", "<leader>pd", builtin.diagnostics, { desc = "Diagnostics" })
 		end,
 	},
 	{

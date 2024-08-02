@@ -35,6 +35,9 @@ return {
       local lsp_config = require("lspconfig")
       lsp_config.lua_ls.setup({capabilities = lsp_capabilities})
       lsp_config.gopls.setup({capabilities = lsp_capabilities})
+      lsp_config.tsserver.setup({capabilities = lsp_capabilities})
+      lsp_config.tailwindcss.setup({capabilities = lsp_capabilities})
+      lsp_config.eslint.setup({capabilities = lsp_capabilities})
 		end,
 	},
 }

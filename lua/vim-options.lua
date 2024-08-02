@@ -9,7 +9,7 @@ vim.g.maplocalleader = " "
 vim.opt.number = true
 
 -- Don't show the mode, since it's already in the status line
-vim.opt.showmode = false
+vim.opt.showmode = true
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -66,3 +66,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+vim.keymap.set("n", "<leader>e", ":Explore<CR>", { desc = "Explore Files" })
