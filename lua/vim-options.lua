@@ -7,6 +7,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = true
@@ -49,12 +50,12 @@ vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 
 -- Move line
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
-vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
-vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
+-- vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
+-- vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
+-- vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
+-- vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
+-- vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
+-- vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
