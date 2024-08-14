@@ -17,7 +17,7 @@ vim.opt.showmode = true
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
+	vim.opt.clipboard = "unnamedplus"
 end)
 
 -- Save undo history
@@ -49,23 +49,25 @@ vim.keymap.set("n", "<C-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 
--- Move line
--- vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
--- vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
--- vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
--- vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
--- vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
--- vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
-
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
 vim.keymap.set("n", "<leader>e", ":Explore<CR>", { desc = "Explore Files" })
+
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+vim.keymap.set("i", "<C-c>", "<Esc>")
+
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
