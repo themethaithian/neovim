@@ -71,3 +71,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
